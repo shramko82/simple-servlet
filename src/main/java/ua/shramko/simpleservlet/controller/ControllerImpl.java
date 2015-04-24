@@ -43,8 +43,7 @@ public class ControllerImpl implements Controller {
             resp.sendRedirect("/error");
         }
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher(page);
-        dispatcher.forward(req, resp);
+        resp.sendRedirect("/servlet");
     }
 
     @Override
@@ -61,8 +60,7 @@ public class ControllerImpl implements Controller {
             resp.sendRedirect("/error");
         }
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher(page);
-        dispatcher.forward(req, resp);
+        resp.sendRedirect("/servlet");
     }
 }
 
