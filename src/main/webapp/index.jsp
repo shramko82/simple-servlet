@@ -1,6 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" import="ua.shramko.simpleservlet.model.Comment"  %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 
 <html>
 <head>
@@ -10,7 +9,7 @@
 </head>
 <body>
           <div class="col-lg-6">
-            <form action = "/servlet/add"  method="post">
+            <form action = "#"  method="put">
               <div class="input-group">
                 <input type="text" class="form-control" name="newComment" placeholder="Add comment">
                 <span class="input-group-btn">
@@ -18,25 +17,13 @@
                 </span>
               </div>
             </form>
-            <fmt:setLocale value="en_US" />
-            <div class="list-group">
-              <ul>
-                <c:forEach var="c" items="${comments}">
 
-                  <form action = "/servlet/delete" method="post">
-                    <li>(<fmt:formatDate type="both"
-                      dateStyle="medium" timeStyle="short"
-                      value="${c.dateOfCreation}"/>) <c:out value="${c.text}"/>
-                        <input type="hidden" name="commentId" value="<c:out value="${c.id}"/>">
-                        <button class="btn btn-default" type="submit">X</button>
-                    </li>
-                   </form>
-
-                </c:forEach>
-              </ul>
-            </div>
+                <form action = "#" method="get">
+                      <button class="btn btn-default" type="submit">Show all</button>
+                </form>
+              <c:out value="${comment}"/>
           </div>
-        </div>
+
 
 
 </body>
