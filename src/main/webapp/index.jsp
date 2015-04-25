@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8"  %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 
 <html>
 <head>
@@ -12,7 +12,7 @@
 
 
           <div class="col-lg-6">
-            <form action = "#"  method="put">
+            <form action = "#"  method="post">
               <div class="input-group">
                 <input type="text" class="form-control" name="newComment" placeholder="Add comment">
                 <span class="input-group-btn">

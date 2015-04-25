@@ -39,8 +39,6 @@ public class ApplicationData {
     public Comment addComment(String text) {
         Comment newComment = new Comment(++commentId, text, new Date());
         comments.put(newComment.getId(), newComment);
-        List<Comment> commentList = new ArrayList<>(comments.values());
-        commentList.add(newComment);
         return newComment;
     }
 

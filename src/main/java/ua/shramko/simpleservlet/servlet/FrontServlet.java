@@ -15,11 +15,11 @@ public class FrontServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        Controller projectController = new ControllerImpl();
-        projectController.proceedRequest(req, resp);
+        Controller controller = new ControllerImpl();
+        controller.proceedRequest(req, resp);
     }
 
-    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Controller controller = new ControllerImpl();
         controller.addNewComment(req, resp);
     }
