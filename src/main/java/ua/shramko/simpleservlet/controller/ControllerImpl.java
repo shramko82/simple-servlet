@@ -15,14 +15,9 @@ public class ControllerImpl implements Controller {
     @Override
     public void proceedRequest(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        String url = req.getPathInfo();
-
         String page = "/index.jsp";
         CommentService commentService = new CommentServiceImpl();
         List<Comment> comments = commentService.getAll();
-        if (comments.size() > 0) {
-            Collections.sort(comments);
-        }
 
         req.setAttribute("comments", comments);
 
@@ -43,7 +38,8 @@ public class ControllerImpl implements Controller {
             resp.sendRedirect("/error");
         }
 
-        resp.sendRedirect("/servlet");
+        RequestDispatcher dispatcher = req.getRequestDispatcher(page);
+        dispatcher.forward(req, resp);
     }
 
     @Override
@@ -60,7 +56,8 @@ public class ControllerImpl implements Controller {
             resp.sendRedirect("/error");
         }
 
-        resp.sendRedirect("/servlet");
+        RequestDispatcher dispatcher = req.getRequestDispatcher(page);
+        dispatcher.forward(req, resp);
     }
 }
 

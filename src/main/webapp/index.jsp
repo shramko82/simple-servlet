@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" import="ua.shramko.simpleservlet.model.Comment"  %>
+<%@ page contentType="text/html;charset=UTF-8"  %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 
 <html>
@@ -8,6 +8,9 @@
   <title></title>
 </head>
 <body>
+<h1> Comment list </h1>
+
+
           <div class="col-lg-6">
             <form action = "#"  method="put">
               <div class="input-group">
@@ -17,11 +20,18 @@
                 </span>
               </div>
             </form>
-
-                <form action = "#" method="get">
-                      <button class="btn btn-default" type="submit">Show all</button>
-                </form>
-              <c:out value="${comment}"/>
+            <form action = "#" method="get">
+               <button class="btn btn-default" type="submit">Show all</button>
+            </form>
+              <div class="list-group">
+                <ul>
+                   <c:forEach var="c" items="${comments}">
+                      <li>
+                        <c:out value="${c.text}"/>
+                      </li>
+                   </c:forEach>
+                </ul>
+              </div>
           </div>
 
 
